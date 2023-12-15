@@ -1,5 +1,79 @@
 /* https://www.youtube.com/watch?v=AUTO7ALJk2U&t=2804s */
 
+/* hoisting */
+// function hoisting
+myFunction();
+function myFunction() {
+  console.log("Hello");
+}
+// Output: Hello
+
+// variable hoisting
+x = 10;
+console.log(x);
+// Output: 10
+var x;
+/* hoisting */
+
+/* type coercion */
+let string = "42";
+let number = 42;
+let boolean = true;
+let nullValue = null;
+
+// type coercion => automatic conversion
+console.log("string + number", string + number);
+console.log("number + boolean", number + boolean);
+console.log("number == string", number == string);
+console.log("boolean == 1", boolean == 1);
+console.log("boolean + nullValue", boolean + nullValue);
+/* type coercion */
+
+/* operator precedence */
+let a = 6;
+let b = 3;
+let c = 2;
+
+// bracketOf-division-multiplication-addition-subtraction
+let result = a + b * c + (a - b);
+console.log("result", result);
+// Output: [15]
+/* operator precedence */
+
+/* spread operator */
+// coping an array
+let arraySpread = [1, 2, 3];
+let copyArraySpread = [...arraySpread];
+console.log("copyArraySpread", copyArraySpread);
+// Output: [1, 2, 3]
+
+// merging an array
+let arraySpread1 = [1, 2, 3];
+let arraySpread2 = [4, 5];
+let mergedArraySpread = [...arraySpread1, ...arraySpread2];
+console.log("mergedArraySpread", mergedArraySpread);
+// Output: [1, 2, 3, 4, 5]
+
+// data passing an array
+let numbers = [1, 2, 3, 4, 5];
+sum(...numbers);
+function sum(a, b, c, d, e) {
+  console.log("data passing Spread", a + b + c + d + e);
+}
+// Output: [15]
+/* spread operator */
+
+/* rest operator */
+display(1, 2, 3, 4, 5);
+function display(first, second, ...restArguments) {
+  console.log("first", first);
+  console.log("second", second);
+
+  console.log("remaining", ...restArguments);
+}
+// Output: [1, 2, 3]
+/* rest operator */
+
 /* indexOf */
 let arrayIndexOf = [1, 2, 3, 4, 5];
 let indexOf = arrayIndexOf.indexOf(3);
@@ -102,3 +176,58 @@ arr2.forEach((e) => {
 console.log("arr2", arr2);
 // Output: [1, 2, 3] // forEach does not return any thing
 /* forEach */
+
+/* array-like object */
+// Example array-like object
+var arrayLike = { 0: "a", 1: "b", 2: "c", length: 3 };
+
+// Using Array.form()
+var array1 = Array.from(arrayLike);
+console.log("array1", array1);
+
+// Using Array.form()
+// var array2 = [...arrayLike];
+// console.log("array2", array2);
+
+// Using Array.prototype.slice.call
+var array3 = Array.prototype.slice.call(arrayLike);
+console.log("array3", array3);
+/* array-like object */
+
+/* for ... of */
+let arr = [1, 2, 3];
+for (let val of arr) {
+  console.log(val);
+}
+// Output: [1, 2, 3]
+/* for ... of */
+
+/* for ... in */
+const person = {
+  name: "Happy",
+  role: "Developer",
+};
+
+for (let key in person) {
+  console.log(person[key]);
+}
+// Output: Happy Developer
+/* for ... in */
+
+/* forEach method */
+let arr3 = [1, 2, 3];
+arr3.forEach(function (item) {
+  console.log(item);
+});
+// output: 1 2 3
+
+const person2 = {
+  name: "Happy",
+  role: "Developer",
+};
+
+Object.values(person2).forEach((value) => {
+  console.log(value);
+});
+// Output: Happy Developer
+/* forEach method */
