@@ -231,3 +231,173 @@ Object.values(person2).forEach((value) => {
 });
 // Output: Happy Developer
 /* forEach method */
+
+/* Named Function */
+function add(a, b) {
+  return a + b;
+}
+console.log("Named Function", add(5, 3));
+// Output: 8
+/* Named Function */
+
+/* Anonymous Function */
+console.log(
+  (function add(a, b) {
+    return a + b;
+  })(8, 3)
+);
+// Output: 11
+/* Anonymous Function */
+
+/* Function expression */
+// Anonymous Function expression
+var add = function (a, b) {
+  return a + b;
+};
+console.log("Anonymous Function expression", add(5, 3));
+// Output: 8
+/* Function expression */
+
+/* Arrow Function */
+// Anonymous Function expression
+const add2 = (a, b) => a + b;
+console.log("Arrow Function", add2(5, 3));
+// Output: 8
+/* Arrow Function*/
+
+/* Callback Function */
+
+// function
+// 1st example
+function greet(name, callback) {
+  console.log("Hi" + " " + name);
+  callback();
+}
+
+// callback function
+function callMe() {
+  console.log("I am callback function");
+}
+
+// passing function as an argument
+greet("Peter", callMe);
+
+// 2nd example
+function displayCallback(x, y, Callback) {
+  // console.log("sum from function", x + y);
+  var result = Callback(x, y);
+  console.log("result from callback function", result);
+}
+
+// callback function
+function addCallMe(x, y) {
+  // console.log("I am callback function", x + y);
+  return x + y;
+}
+
+// callback function
+function multiplyCallMe(x, y) {
+  // console.log("I am callback function", x + y);
+  return x * y;
+}
+
+// passing function as an argument
+displayCallback(5, 3, addCallMe);
+displayCallback(5, 3, multiplyCallMe);
+/* Callback Function */
+
+/* Higher Order Function */
+// 1st example
+// take one or more functions as arguments
+function hof(func) {
+  func();
+}
+
+hof(sayHello);
+
+function sayHello() {
+  console.log("function call from HOF", "Hello");
+}
+
+// 2nd example
+// Return a function as a result
+function createAdder(number) {
+  return function (value) {
+    return value + number;
+  };
+}
+
+const addFive = createAdder(5);
+
+console.log(addFive(2));
+/* Higher Order Function */
+
+/* parameters and arguments */
+// a and b are parameters
+function add(a, b) {
+  console.log(a + b);
+}
+
+// 3 and 4 are arguments
+add(3, 4);
+/* parameters and arguments */
+
+/* pass arguments */
+function add3(a, b) {
+  console.log(a + b);
+}
+
+// positional arguments
+add3(3, 4);
+
+// named arguments
+var person3 = {
+  name: "Happy",
+  role: "Developer",
+};
+
+function greet3(person) {
+  console.log(person.name + " " + person.role);
+}
+
+greet3(person3);
+
+// arguments object
+sum3(1, 2, 3);
+function sum3() {
+  console.log(arguments[0]);
+  // Output: 1
+  console.log(arguments[1]);
+  // Output: 2
+  console.log(arguments[2]);
+  // Output: 3
+  console.log(arguments.length);
+  // Output: 3
+}
+/* pass arguments */
+
+/* pure and impure function */
+// pure function
+function add4(a, b) {
+  return a + b;
+}
+
+console.log(add(3, 5));
+// Output: 8
+
+console.log(add(3, 5));
+// Output: 8
+
+// impure function
+let total = 0;
+function addTotalValue(value) {
+  total += value;
+  return total;
+}
+
+console.log(addTotalValue(5));
+// Output: 5
+
+console.log(addTotalValue(5));
+// Output: 10
+/* pure and impure function */
