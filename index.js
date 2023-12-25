@@ -401,3 +401,225 @@ console.log(addTotalValue(5));
 console.log(addTotalValue(5));
 // Output: 10
 /* pure and impure function */
+
+/* call, apply and bind method */
+// defining a function that uses the "this" context and an argument
+function sayHello5(message) {
+  console.log(`${message}, ${this.name}!`);
+}
+const person5 = { name: "Happy" };
+
+// 1. call - using the "call" method to invoke the function
+// with a specific context and argument
+sayHello5.call(person, "Hello");
+// Output: "Hello, Happy"
+
+// 2. apply - Using the "apply" method to invoke the function
+// with a specific context and an array of arguments
+sayHello5.apply(person5, ["Hi"]);
+
+//3. bind - using the "bind" method to create a new function
+// with a specific context (not invoking it immediately)
+const greetPerson = sayHello5.bind(person);
+greetPerson("Greetings");
+/* call, apply and bind method */
+
+/* template literals and string interpolation */
+// Backticks (`)
+// Template literals with string interpolation
+var myName = "Happy";
+var str3 = `Hello ${myName}`;
+console.log(str3);
+// output: Hello Happy
+
+// Backticks (`)
+// Template literals with multiple strings
+var multilineStr = `
+This is a 
+multiline string.
+`;
+
+// Add multiple string
+let str1 = "Hello";
+let str2 = "World";
+let result6 = str1 + " " + str2;
+console.log(result6);
+// Output: Hello World
+
+// Using concat() method
+let result7 = str1.concat(" ", str2);
+console.log(result7);
+// Output: Hello World
+
+// Extract a portion of a string
+let subString = result6.substring(6, 11);
+console.log(subString);
+// Output: World
+
+// Retrieve the length of a string
+console.log(result6.length);
+// Output: 11
+
+// Convert a string to uppercase or lowercase
+console.log(result6.toUpperCase());
+// Output: HELLO WORLD
+
+console.log(result6.toLowerCase());
+// Output: hello world
+
+// Split a string into an array of substrings
+// based on a delimiter
+let arr6 = result6.split(" ");
+console.log(arr6);
+// Output: ["Hello", "World"]
+
+// Replace occurrences of a substring within a string
+console.log(result6.replace("World", "Javascript"));
+// Output: Hello Javascript
+
+// Remove leading and trailing whitespace
+let str = " Hello World ";
+let trimmedStr = str.trim();
+console.log(trimmedStr);
+
+/* template literals and string interpolation */
+
+/* types of errors */
+/* syntax error */
+// console.log("Hello, World"
+// Output: missing closing parenthesis
+/* syntax error */
+
+/* reference error */
+//console.log(myVariable)
+// myVariable is not defined
+/* reference error */
+
+/* Type Error*/
+// const number6 = 42
+// console.log(number6.toUpperCase());
+// number.toUpperCase is not a function
+/* Type Error*/
+
+/* Range Error */
+// const arr7 = [1,2,3];
+// console.log(arr7[10])
+// index 10 is out of bounds
+/* Range Error */
+
+/* types of errors */
+
+/* Object */
+// 1. string/number/boolean/null/undefined
+// 2. array
+// 3. function
+// 4. object
+let person6 = {
+  name:"Happy",
+  hobbies: ["Teaching", "coding"],
+  greet: function(){
+    console.log("name:" + this.name)
+  }
+}
+
+console.log(person6.name)
+// Output: Happy
+
+console.log(person6.hobbies[1])
+// Output: "coding"
+
+person6.greet();
+// Output: "Name: Happy"
+/* Object */
+
+/* Ways to create and initialize an object */
+// Object literal
+var person7 = {
+  name: "Happy",
+  age: 38,
+  role: "Trainer"
+};
+console.log(person7)
+
+// Object constructor
+var person8 = new Object();
+person8.name = "Happy";
+person8.age = 38;
+person8.role = "Trainer";
+console.log(person8)
+
+// Object.create() method
+var person9 = {
+  name: "",
+  age: 0,
+  role: ""
+};
+var men = Object.create(person9);
+men.name = "Happy";
+men.age = 38;
+men.role = "Trainer";
+console.log(men)
+/* Ways to create and initialize an object */
+
+/* add or modify or delete properties of an object */
+// blank object
+var person10 = {};
+// Adding properties
+person10.name = "Happy";
+person10.age = 35;
+person10.country = "India";
+// modifying properties
+person10.age = 30;
+// deleting properties
+delete person10.age;
+console.log(person10);
+/* add or modify or delete properties of an object */
+
+/* iterate over the properties of an object */
+var person11 = {
+  name: "Joan",
+  age: 30
+}
+// 1. using for...in loop
+for(let prop in person11){
+  console.log(prop + ": " + person11[prop]);
+}
+// Output: name: Joan age: 30
+// 2. using object.keys() and forEach()
+Object.keys(person11).forEach((prop) => {
+  console.log(prop + ": " + person11[prop])
+})
+// Output: name: Joan age: 30
+// 3. using object.keys() and forEach()
+Object.values(person11).forEach((value) => {
+  console.log(value);
+})
+// Output: name: Joan age: 30
+/* iterate over the properties of an object */
+
+/* Set Object */
+// Creating a set to store unique numbers
+const uniqueNumbers = new Set();
+uniqueNumbers.add(5);
+uniqueNumbers.add(10);
+uniqueNumbers.add(5);
+console.log(uniqueNumbers);
+// Output: 5, 10
+//check size
+console.log(uniqueNumbers.size);
+// Output: 2
+//check element existence
+console.log(uniqueNumbers.has(10));
+// Output: true
+uniqueNumbers.delete(10);
+console.log(uniqueNumbers.size);
+// Output: 1
+// set can be used to remove
+// duplicate values from arrays
+let myArr = [1,4,3,4];
+let mySet = new Set(myArr);
+
+let uniqueArray = [...mySet];
+console.log(uniqueArray);
+// Output: [1,4,3]
+/* Set Object */
